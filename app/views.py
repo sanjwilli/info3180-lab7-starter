@@ -33,6 +33,10 @@ def thumbnails():
         }
         return jsonify(links)
 
+@app.route('/thumbnails/view')
+def thumbnails_view():
+    pics = image_getter.url_list()
+    return render_template('thumbnails_view.html', pics = pics)
 ###
 # The functions below should be applicable to all Flask apps.
 ###
